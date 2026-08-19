@@ -1,0 +1,21 @@
+.mes[is_user="true"] .paragraph_split_button,
+.mes[is_system="true"] .paragraph_split_button {
+    display: none !important;
+}
+
+.paragraph_split_button.disabled {
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.mes .paragraph_split_button {
+    color: #5dade2 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 1.15em !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+}
+
+.mes .paragraph_split_button:hover {
+    color: #85c1e9 !important;
+}
