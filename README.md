@@ -29,6 +29,8 @@ AI 메시지의 버튼을 눌렀을 때, 문자 수 기준 중앙에 가장 가�
 
 정상 설치되면 브라우저 개발자 콘솔에 `[Paragraph Message Splitter] Loaded in manual button mode.`가 표시됩니다.
 
+문자열 형태의 `is_user: "false"`, `is_system: "false"` 값을 사용하는 채팅 형식도 지원합니다.
+
 ## 호환성
 
 SillyTavern의 공개 `SillyTavern.getContext()` API를 사용하며, 2026-08 기준 release 브랜치 API 구조에 맞춰 작성했습니다.

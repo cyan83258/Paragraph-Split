@@ -5,6 +5,11 @@ const SPLIT_ICON = 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/20
 
 let splitInProgress = false;
 
+/** Treats only the boolean/string representation of true as enabled. */
+export function isTrueFlag(value) {
+    return value === true || value === 'true' || value === 1 || value === '1';
+}
+
 function isInsideCodeFence(text, position) {
     const fencePattern = /^ {0,3}(`{3,}|~{3,})[^\r\n]*$/gm;
     let openFence = null;
@@ -87,7 +92,12 @@ async function splitMessage(messageId) {
     const context = SillyTavern.getContext();
     const sourceMessage = context.chat[messageId];
 
-    if (!sourceMessage || sourceMessage.is_user || sourceMessage.is_system) {
+    if (!sourceMessage) {
+        globalThis.toastr?.error('메시지 데이터를 찾을 수 없습니다. 채팅을 새로고침한 뒤 다시 시도해 주세요.');
+        return false;
+    }
+
+    if (isTrueFlag(sourceMessage.is_user) || isTrueFlag(sourceMessage.is_system)) {
         globalThis.toastr?.warning('AI 메시지만 분리할 수 있습니다.');
         return false;
     }
