@@ -5,7 +5,7 @@ AI 메시지의 버튼을 눌렀을 때, 문자 수 기준 중앙에 가장 가�
 ## 사용 방법
 
 1. 분리할 AI 메시지에서 우측 상단의 `⋯` **Message Actions** 버튼을 누릅니다.
-2. 절반 아이콘(½, **문단 기준으로 두 메시지로 분리**)을 누릅니다.
+2. 파란색의 위아래 두 메시지 모양 아이콘(**문단 기준으로 두 메시지로 분리**)을 누릅니다.
 3. 메시지가 두 개로 분리되고 채팅에 바로 저장됩니다.
 
 ## 분할 규칙
@@ -20,11 +20,12 @@ AI 메시지의 버튼을 눌렀을 때, 문자 수 기준 중앙에 가장 가�
 
 ## 설치
 
-1. 압축을 풀어 `ST-Paragraph-Split` 폴더를 아래 위치에 넣습니다.
+1. 이전 버전의 `ST-Paragraph-Split` 폴더가 있다면 먼저 삭제합니다.
+2. 압축을 풀어 `Paragraph-Message-Splitter` 폴더를 아래 위치에 넣습니다.
 
    `SillyTavern/public/scripts/extensions/third-party/`
 
-2. SillyTavern 페이지를 새로고침합니다.
+3. SillyTavern 페이지를 `Ctrl+F5`로 새로고침합니다.
 
 정상 설치되면 브라우저 개발자 콘솔에 `[Paragraph Message Splitter] Loaded in manual button mode.`가 표시됩니다.
 

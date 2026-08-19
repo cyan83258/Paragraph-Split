@@ -1,6 +1,7 @@
 const EXTENSION_NAME = 'Paragraph Message Splitter';
 const SPLIT_MARKER = 'paragraph_message_splitter';
 const BUTTON_CLASS = 'paragraph_split_button';
+const SPLIT_ICON = 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect x=%272%27 y=%272.5%27 width=%2720%27 height=%277%27 rx=%272%27 fill=%27%235dade2%27 stroke=%27%23ffffff%27 stroke-width=%271.2%27/%3E%3Crect x=%272%27 y=%2714.5%27 width=%2720%27 height=%277%27 rx=%272%27 fill=%27%235dade2%27 stroke=%27%23ffffff%27 stroke-width=%271.2%27/%3E%3Cpath d=%27M7 12h10%27 stroke=%27%235dade2%27 stroke-width=%272%27 stroke-linecap=%27round%27/%3E%3C/svg%3E")';
 
 let splitInProgress = false;
 
@@ -137,9 +138,26 @@ function installSplitButtons() {
 
         const button = $('<div>')
             .addClass(`mes_button ${BUTTON_CLASS}`)
-            .text('½')
             .attr('title', '문단 기준으로 두 메시지로 분리')
-            .attr('aria-label', '문단 기준으로 두 메시지로 분리');
+            .attr('aria-label', '문단 기준으로 두 메시지로 분리')
+            .attr('role', 'button')
+            .attr('data-paragraph-splitter', 'true');
+
+        // Inline !important styles keep the icon visible even when a custom theme
+        // resets message-button fonts, text, backgrounds, width, or height.
+        const element = button.get(0);
+        element.style.setProperty('display', 'inline-block', 'important');
+        element.style.setProperty('visibility', 'visible', 'important');
+        element.style.setProperty('width', '24px', 'important');
+        element.style.setProperty('height', '24px', 'important');
+        element.style.setProperty('min-width', '24px', 'important');
+        element.style.setProperty('min-height', '24px', 'important');
+        element.style.setProperty('background-image', SPLIT_ICON, 'important');
+        element.style.setProperty('background-position', 'center', 'important');
+        element.style.setProperty('background-repeat', 'no-repeat', 'important');
+        element.style.setProperty('background-size', '20px 20px', 'important');
+        element.style.setProperty('font-size', '0', 'important');
+        element.style.setProperty('opacity', '1', 'important');
 
         container.prepend(button);
     });

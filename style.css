@@ -8,14 +8,6 @@
     pointer-events: none;
 }
 
-.mes .paragraph_split_button {
-    color: #5dade2 !important;
-    font-family: Arial, sans-serif !important;
-    font-size: 1.15em !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-}
-
 .mes .paragraph_split_button:hover {
-    color: #85c1e9 !important;
+    filter: brightness(1.25) drop-shadow(0 0 3px #5dade2) !important;
 }
